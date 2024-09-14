@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Text Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Copy Text Example</h1>
+    <div id="textToCopy">https://github.com/Gotoueijirou/ACG-Societies-WebSite.git</div>
+    <a onclick="copyText()">Copy Text</a>
+    <div class="message" id="message">复制成功</div>
+
+    <script src="js/cptext.js"></script>
+
+</body>
+</html>

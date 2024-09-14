@@ -36,6 +36,17 @@
     animation: r3 1s forwards;
     animation-delay: 1.9s;
 }
+#right4{
+    width: 90%;
+
+    padding: 10px 10px;
+    margin: 10px 10px;
+    /*以下为动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: r4 1s forwards;
+    animation-delay: 2.1s;
+}
 
 @keyframes r1 {
     0%{
@@ -58,6 +69,16 @@
     }
 }
 @keyframes r3 {
+    0%{
+        opacity: 0;
+        left: 100px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes r4 {
     0%{
         opacity: 0;
         left: 100px;

@@ -41,6 +41,15 @@ body{
 }
 
 
+/*复制信息 about js/cptext.js*/
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+    display: none; /* Initially hidden */
+}
+
+
 
 /*#################################*/
 
@@ -140,9 +149,8 @@ body{
 .background-image {
     position: absolute;
     z-index: -1; /* 保证图片在内容之下 */
-    right: -2%;
+    right: 0%;
     opacity: 1;
-
 
     /*动画*/
 
