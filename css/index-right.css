@@ -1,0 +1,69 @@
+/*index-right.css
+这是index.html右半部分的专属css，因为动画复杂，所以单独提取出来。
+
+能力有限，做的不好qwq
+*/
+#right1{
+    width: 90%;
+
+    padding: 10px 10px;
+    margin: 10px 10px;
+    /*以下为动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: r1 1s forwards;
+    animation-delay: 1.5s;
+}
+#right2{
+    width: 90%;
+
+    padding: 10px 10px;
+    margin: 10px 10px;
+    /*以下为动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: r2 1s forwards;
+    animation-delay: 1.7s;
+}
+#right3{
+    width: 90%;
+
+    padding: 10px 10px;
+    margin: 10px 10px;
+    /*以下为动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: r3 1s forwards;
+    animation-delay: 1.9s;
+}
+
+@keyframes r1 {
+    0%{
+        opacity: 0;
+        left: 100px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes r2 {
+    0%{
+        opacity: 0;
+        left: 100px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes r3 {
+    0%{
+        opacity: 0;
+        left: 100px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}

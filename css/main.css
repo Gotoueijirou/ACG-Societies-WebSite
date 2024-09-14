@@ -1,0 +1,143 @@
+/*
+main.css
+这个是网页统一格式，每个网页必须调用本css，并且使用template.html的模板，
+才可以保证风格统一。
+
+要求：可选样式使用id，不能使用class，部分可选样式已经使用了class，复制一份使用id的，
+以保证原先的代码正常运行但是规则要求必须使用id，class用在基础格式上。
+*/
+
+
+/*#################################*/
+/*这个是基础格式，必须调用
+
+要求：可选样式使用id，不能使用class，部分可选样式已经使用了class，复制一份使用id的，
+以保证原先的代码正常运行但是规则要求必须使用id，class用在基础格式上。
+*/
+body{
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    background-color: #cce7ff;
+    display: flex;
+    justify-content: center;
+
+}
+#index1{/*可选格式，如果不想有下滑条等的话*/
+    display: flex;
+
+    align-items:center;
+    height: 90vh;
+}
+
+
+
+.main{
+    display: flex;
+    width: 90%;
+    height: 90%;
+}
+
+
+
+/*#################################*/
+
+
+
+
+
+
+
+/*#################################*/
+/*以下是可选格式，包括一些控件的模板可以调用
+
+
+要求：可选样式使用id，不能使用class，部分可选样式已经使用了class，复制一份使用id的，
+以保证原先的代码正常运行但是规则要求必须使用id，class用在基础格式上。
+*/
+
+
+
+/*链接文本1*/
+.LinkText1{
+    text-decoration: none;
+    color: black;
+}
+#LinkText1{
+    text-decoration: none;
+    color: black;
+}
+
+.button{/*按钮样式*/
+    border: 2px solid black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.button:hover{
+    background-color: #0b26364d;
+}
+#button{/*按钮样式*/
+    border: 2px solid black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+#button:hover{
+    background-color: #0b26364d;
+}
+
+
+
+
+
+
+.button1{/*按钮样式1*/
+    border: 2px solid #0b2636;
+    background-color: #0b2636;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.button1:hover{
+    background-color: #0a476a;
+}
+
+
+
+
+
+.DivStyle-Glass{
+    background: rgba(255, 255, 255, 0.3); /* 设置背景颜色和透明度 */
+    backdrop-filter: blur(10px); /*毛玻璃效果*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#DivStyle-Glass{
+    background: rgba(255, 255, 255, 0.3); /* 设置背景颜色和透明度 */
+    backdrop-filter: blur(10px); /*毛玻璃效果*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+/*#################################*/
+
+
+
+
+
+
+
+/*#################################*/
+/*动画*/
+
+/*#################################*/

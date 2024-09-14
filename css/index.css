@@ -1,0 +1,115 @@
+/*index.css
+这是专属于index的css，因为主页的独特性，我们制作了一些动画，将存放于此。
+同时也包括了部分布局的属性。
+当然，如果有需要的话可以调用此css。
+*/
+body{
+    font-weight: bold;
+
+    /*动画部分*/
+    position: relative;
+    animation: body 0.5s forwards;
+}
+
+#left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /*动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: Main 0.5s forwards;
+    animation-delay: 0.3s;
+}
+#right{
+    width: 50%;
+    
+    /*flex布局*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content:flex-start;
+
+
+}
+#title{
+    text-align: center;
+    padding: 10px 10px;
+
+    /*以下为动画部分*/
+    position: relative;
+    opacity: 0;
+    animation: L 1s forwards;
+    animation-delay: 0.9s;
+}
+#title #bigtitle{
+    font-size: 50px;
+}
+#title #littletitle{
+    font-size: 20px;
+}
+
+
+
+/* 当长宽比小于1:1时，使用另一种排版 */
+@media (max-aspect-ratio: 1/1) {
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        font-size: 40px;
+    }
+    #left{
+        width: 100%;
+    }
+    #right{
+        width: 100%;
+    }
+    #title #bigtitle{
+        font-size: 70px;
+    }
+    #title #littletitle{
+        font-size: 40px;
+    }
+    #title #copyright{
+        font-size: 30px;
+    }
+    
+
+}
+
+
+/*#################################*/
+/*动画*/
+@keyframes L {
+    50% {
+        top: 100px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+@keyframes Main {
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes body {
+    0%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        background-color: #cce7ff;
+    }
+}
+/*#################################*/
