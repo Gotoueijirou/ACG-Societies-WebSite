@@ -9,6 +9,12 @@
 
 另外本人不会数据库，所以网站建立初期只能手动发帖（累）欢迎各位大佬的指点。
 
+# 十分感谢以下贡献者！
+感谢他们对main分支的贡献！
+<a href="https://github.com/Gotoueijirou/ACG-Societies-WebSite/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Gotoueijirou/ACG-Societies-WebSite" />
+</a>
+
 # 心里CD
 - md我自己不想设计图标呀！！！有没有人帮忙设计图标呀！！！
 
