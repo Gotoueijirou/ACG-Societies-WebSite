@@ -26,6 +26,10 @@ body{
 
     align-items:center;
     height: 90vh;
+
+    /*服务于背景图片*/
+    position: relative; /* 确保内容层级高于图片 */
+    z-index: 2; /* 保证内容在图片之上 */
 }
 
 
@@ -116,19 +120,37 @@ body{
 
 
 
-
+/*毛玻璃div*/
 .DivStyle-Glass{
-    background: rgba(255, 255, 255, 0.3); /* 设置背景颜色和透明度 */
+    background: rgba(255, 255, 255, 0.1); /* 设置背景颜色和透明度 */
     backdrop-filter: blur(10px); /*毛玻璃效果*/
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
 #DivStyle-Glass{
-    background: rgba(255, 255, 255, 0.3); /* 设置背景颜色和透明度 */
+    background: rgba(255, 255, 255, 0.1); /* 设置背景颜色和透明度 */
     backdrop-filter: blur(10px); /*毛玻璃效果*/
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
+
+
+
+/*调用背景图片动画*/
+.background-image {
+    position: absolute;
+    z-index: -1; /* 保证图片在内容之下 */
+    right: -2%;
+    opacity: 1;
+
+
+    /*动画*/
+
+
+    animation: background-image 1s forwards;
+    
+}
+
 /*#################################*/
 
 
@@ -140,4 +162,16 @@ body{
 /*#################################*/
 /*动画*/
 
+
+
+@keyframes background-image {
+    0%{
+        right: -50%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
 /*#################################*/
