@@ -3,8 +3,11 @@
 同时也包括了部分布局的属性。
 当然，如果有需要的话可以调用此css。
 */
+
 body{
     font-weight: bold;
+
+    z-index: 1;
 
     /*动画部分*/
     position: relative;
@@ -46,10 +49,10 @@ body{
     animation-delay: 0.9s;
 }
 #title #bigtitle{
-    font-size: 50px;
+    font-size: 70px;
 }
 #title #littletitle{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 
@@ -90,7 +93,7 @@ body{
         opacity: 0;
     }
     100% {
-        top: 0;
+        top: -10%;
         opacity: 1;
     }
 }
@@ -104,6 +107,8 @@ body{
         opacity: 1;
     }
 }
+
+/*背景慢慢变蓝*/
 @keyframes body {
     0%{
         background-color: rgba(255, 255, 255, 0);
