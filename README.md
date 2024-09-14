@@ -11,6 +11,7 @@
 
 # 十分感谢以下贡献者！
 感谢他们对main分支的贡献！
+
 <a href="https://github.com/Gotoueijirou/ACG-Societies-WebSite/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Gotoueijirou/ACG-Societies-WebSite" />
 </a>
