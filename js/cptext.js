@@ -15,11 +15,5 @@ function copyText() {
     document.body.removeChild(tempTextArea);
 
     // 显示复制成功消息
-    const message = document.getElementById('message');
-    message.style.display = 'block';
-
-    // 设置 2 秒后隐藏提示
-    setTimeout(() => {
-        message.style.display = 'none';
-    }, 2000);
+    alert("复制成功！");
 }
