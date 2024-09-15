@@ -3,50 +3,52 @@
 
 能力有限，做的不好qwq
 */
-#right1{
+#right div{
     width: 90%;
 
     padding: 10px 10px;
     margin: 10px 10px;
-    /*以下为动画部分*/
+
+
     position: relative;
     opacity: 0;
+    display: inline-block; /* 菜单项横向排列 */
+}
+
+#right1{
     animation: r1 1s forwards;
     animation-delay: 1.5s;
 }
 #right2{
-    width: 90%;
-
-    padding: 10px 10px;
-    margin: 10px 10px;
-    /*以下为动画部分*/
-    position: relative;
-    opacity: 0;
     animation: r2 1s forwards;
     animation-delay: 1.7s;
 }
 #right3{
-    width: 90%;
-
-    padding: 10px 10px;
-    margin: 10px 10px;
-    /*以下为动画部分*/
-    position: relative;
-    opacity: 0;
     animation: r3 1s forwards;
     animation-delay: 1.9s;
 }
 #right4{
-    width: 90%;
-
-    padding: 10px 10px;
-    margin: 10px 10px;
-    /*以下为动画部分*/
-    position: relative;
-    opacity: 0;
     animation: r4 1s forwards;
     animation-delay: 2.1s;
 }
+
+
+
+
+/* 子菜单的初始样式，默认隐藏 */
+#Submenu{
+    top: 100%; /* 子菜单在主菜单项的下方 */
+    left: 0; /* 子菜单与主菜单左对齐 */
+    max-height: 0; /* 子菜单初始高度为 0，即隐藏 */
+    overflow: hidden; /* 隐藏超出部分 */
+    transition: max-height 0.8s ease; /* 添加滑动动画 */
+}
+/* 鼠标悬停在主菜单项时，子菜单显示并展开 */
+#right div:hover #Submenu {
+    max-height: 300px; /* 根据实际内容设置合适的最大高度 */
+}
+
+
 
 @keyframes r1 {
     0%{
