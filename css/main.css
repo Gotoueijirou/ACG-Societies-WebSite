@@ -19,11 +19,10 @@ main.css
 body{
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
     background-color: #cce7ff;
-    display: flex;
     justify-content: center;
 
 }
-#index1{/*可选格式，如果不想有下滑条等的话*/
+#index1{/*可选格式，如果不想有下滑条等的话   应用于<body>*/
     display: flex;
 
     align-items:center;
@@ -43,16 +42,23 @@ body{
 }
 
 
-/*复制信息 about js/cptext.js*/
-.message {
-    margin-top: 20px;
-    font-size: 18px;
-    color: green;
-    display: none; /* Initially hidden */
+
+
+
+
+/*调用背景图片动画*/
+.background-image {/*应用于<img>*/
+    position: absolute;
+    z-index: -1; /* 保证图片在内容之下 */
+    right: 0%;
+    opacity: 1;
+
+    /*动画*/
+
+
+    animation: background-image 1s forwards;
+    
 }
-
-
-
 /*#################################*/
 
 
@@ -80,6 +86,8 @@ body{
     text-decoration: none;
     color: black;
 }
+
+
 
 .button{/*按钮样式*/
     border: 2px solid black;
@@ -128,6 +136,26 @@ body{
     background-color: #0a476a;
 }
 
+#button1{/*那个傻逼tmd用了class*/
+    border: 2px solid #0b2636;
+    background-color: #0b2636;
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+#button1:hover{
+    background-color: #0a476a;
+}
+
+
+
+
+
+
 
 
 
@@ -145,19 +173,7 @@ body{
 
 
 
-/*调用背景图片动画*/
-.background-image {
-    position: absolute;
-    z-index: -1; /* 保证图片在内容之下 */
-    right: 0%;
-    opacity: 1;
 
-    /*动画*/
-
-
-    animation: background-image 1s forwards;
-    
-}
 
 /*#################################*/
 

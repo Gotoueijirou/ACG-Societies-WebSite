@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>GTEJRの内心ページ</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/main.css"><!--统一样式-->
+        <link rel="stylesheet" href="css/blig.css"><!--blig-->
+    </head>
+    <body>
+        
+        <!--背景图片-->
+        <img class="background-image" src="background/bg1.png" alt="Background Image">
+
+
+        <!--调用blog类页面的头 file://协议不支持，不用惊慌-->
+        <div class="DivStyle-Glass" id="blig_had"></div><!--日你妈是个blig就给我填上-->
+        
+
+        <!--正文-->
+        <div class="DivStyle-Glass" style="width: 30%; height: 100px; display: flex; align-items: center"><!--class="DivStyle-Glass"用于调用默认的毛玻璃效果-->
+            class="DivStyle-Glass"用于调用默认的毛玻璃效果，其余效果自己设置
+        </div>
+
+
+        <!--copy文字内容 目前只支持一个page一个内容-->
+        <p id="textToCopy">你妈死了</p><!--要复制的内容（检测id）-->
+        <a class="button" onclick="copyText()">复制文本</a><!--按钮-->
+        <script src="js/cptext.js"></script><!--这个一般放在末尾</body前面>-->
+
+        <p></p>
+
+        <a id="LinkText1" href="#">链接格式1</a>
+        <a id="button1" href="#">按钮格式1</a>
+        <a id="button" href="#">按钮格式</a>
+
+        <script src="js/blig_had.js"></script><!--blug 头部-->
+        
+
+    </body>
+</html>
