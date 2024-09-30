@@ -1,10 +1,11 @@
 /*因为main.css较为久远，比较混乱，因此博客类page请调用它*/
 
 .blig_had{
-    width: 100%;
+    width: 80%;
     height: 100px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 .blig_had a{
     margin-left: 30px;
