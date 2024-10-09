@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>模版页</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/main.css"><!--统一样式-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: black; /* 设置黑色背景 */
+            }
+            canvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none;
+                z-index: -9999; /* 使 canvas 在页面最上层 */
+            }
+            .title{
+                animation: title 1.5s forwards;
+                
+            }
+            @keyframes title {
+                0%{
+                    margin-top: 1000px;
+                }
+                100%{
+                    margin-top: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <template id="birthday-template">
+            <div class="title">
+                <p id="birthday-message" style="color: white; text-align: center; font-size: 70px;"></p>
+            </div>
+        </template>
+        <!-- 显示结果的容器 -->
+        <div id="birthday-container"></div>
+
+
+
+        
+        <!-- 放置烟花的 canvas -->
+        <canvas id="fireworksCanvas"></canvas>
+
+
+
+        <script src="js/birthday.js"></script>
+        <script src="js/fireworks.js"></script><!--烟花动画-->
+    </body>
+</html>
