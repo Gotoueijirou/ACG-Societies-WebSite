@@ -9,6 +9,7 @@ body{
 
     z-index: 1;
 
+    
     /*动画部分*/
     position: relative;
     animation: body 0.5s forwards;
@@ -34,7 +35,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-content:flex-start;
+    /*align-content:flex-start;*/
 
 
 }
@@ -62,24 +63,13 @@ body{
     .main {
         flex-direction: row;
         flex-wrap: wrap;
-
         font-size: 40px;
     }
-    #left{
-        width: 100%;
-    }
-    #right{
-        width: 100%;
-    }
-    #title #bigtitle{
-        font-size: 70px;
-    }
-    #title #littletitle{
-        font-size: 40px;
-    }
-    #title #copyright{
-        font-size: 30px;
-    }
+    #left{width: 100%;}
+    #right{width: 100%;}
+    #title #bigtitle{font-size: 70px;}
+    #title #littletitle{font-size: 40px;}
+    #title #copyright{font-size: 30px;}
     
 
 }
@@ -103,9 +93,7 @@ body{
     50%{
         opacity: 0;
     }
-    100%{
-        opacity: 1;
-    }
+    100%{opacity: 1;}
 }
 
 /*背景慢慢变蓝*/

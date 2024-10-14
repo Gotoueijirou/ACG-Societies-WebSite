@@ -13,16 +13,21 @@
                 text-align: center;
                 padding: 20px 0px 20px 0px;
                 margin-top: 10px;
+
+                animation: main 1.5s forwards;
             }
             #main p{
                 font-size: 25px;
+            }
+
+            @keyframes main {
+                0%{opacity: 0;}
+                100%{opacity: 1;}
             }
         </style>
     </head>
     <body>
         
-        <!--背景图片-->
-        <img class="background-image" src="background/bg1.png" alt="Background Image">
 
 
         <!--调用blog类页面的头 file://协议不支持，不用惊慌-->
@@ -32,9 +37,9 @@
         <!--正文-->
         <div class="DivStyle-Glass" id="main"><!--class="DivStyle-Glass"用于调用默认的毛玻璃效果-->
             <h1>社团成员名单</h1>
-            <p>郭家和-后藤荣次郎</p>
+            <p>郭家和</p>
             <p>杜雨航-社长</p>
-            <p>陈子轩-猫耳女仆</p>
+            <p>陈子轩</p>
         </div>    
 
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
