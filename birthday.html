@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-        <title>模版页</title>
+        <title>Happy Birthday!</title>
         <meta charset="UTF-8">
         <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/main.css"><!--统一样式-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body {
@@ -20,16 +19,19 @@
                 z-index: -9999; /* 使 canvas 在页面最上层 */
             }
             .title{
-                animation: title 1.5s forwards;
+                animation: title 2s forwards;
                 
             }
+            .bhd{
+                animation: bhd 2s forwards;
+            }
             @keyframes title {
-                0%{
-                    margin-top: 1000px;
-                }
-                100%{
-                    margin-top: 0px;
-                }
+                0%{margin-top: 700px;}
+                100%{margin-top: 0px;}
+            }
+            @keyframes bhd {
+                50%{opacity: 0;}
+                100%{opacity: 1;}
             }
         </style>
     </head>
@@ -44,6 +46,8 @@
         <div id="birthday-container"></div>
 
 
+        <img class="bhd" style="margin: 0 50%;" src="pictures/birthday.gif"/>
+
 
         
         <!-- 放置烟花的 canvas -->
@@ -51,7 +55,130 @@
 
 
 
-        <script src="js/birthday.js"></script>
-        <script src="js/fireworks.js"></script><!--烟花动画-->
+        <script>
+                        // 假设这是生日数据（可以从数据库获取）
+            const birthdays = [
+                { name: "凉宫春日", date: "10-8" }, 
+                { name: "阿虚", date: "10-11"},
+
+                { name: "李秀成", date: "10-8" },
+                { name: "郭家和", date: "8-8" },
+                { name: "陈子轩", date: "11-27" },
+                { name: "杜雨航", date: "7-14" },
+                { name: "龙生", date: "2-6" },
+            ];
+
+            // 获取当前日期
+            const today = new Date();
+            const currentMonthDay = ("0" + (today.getMonth() + 1)).slice(-2) + "-" + ("0" + today.getDate()).slice(-2);
+
+            // 查找今天是否有人过生日（返回所有匹配的人）
+            const birthdayPeople = birthdays.filter(person => person.date === currentMonthDay);
+
+            // 获取模板和容器
+            const template = document.getElementById('birthday-template');
+            const container = document.getElementById('birthday-container');
+            const clone = template.content.cloneNode(true);
+            const message = clone.querySelector('#birthday-message');
+
+            // 如果找到过生日的人，显示他们的名字
+            if (birthdayPeople.length > 0) {
+                const names = birthdayPeople.map(person => person.name).join('和');
+                message.textContent = `祝 ${names} 生日快乐!!`;
+            } else {
+                message.textContent = "忌日快乐";
+            }
+
+            // 将克隆的内容添加到页面上
+            container.appendChild(clone);
+        </script>
+
+
+
+        <!--烟花动画-->
+        <script>
+            window.onload = function() {
+                // 获取 canvas 元素
+                const canvas = document.getElementById('fireworksCanvas');
+                const ctx = canvas.getContext('2d');
+                let fireworks = [];
+
+                // 调整 canvas 的大小
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                // 烟花粒子类
+                class Firework {
+                    constructor(x, y, color) {
+                        this.x = x;
+                        this.y = y;
+                        this.color = color;
+                        this.radius = Math.random() * 6 + 4; // 粒子大小
+                        this.life = 220; // 粒子生命长度，确保动画能持续约2秒
+                        this.opacity = 1; // 设置初始透明度为1
+                        this.dx = (Math.random() - 0.5) * 20; // 初始横向移动速度
+                        this.dy = (Math.random() - 0.5) * 20; // 初始纵向移动速度
+                        this.decay = 0.98; // 速度衰减系数，值越接近1，速度变化越慢
+                    }
+
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                        ctx.fillStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.opacity})`; // 添加透明度
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+
+                    update() {
+                        // 速度逐渐减慢
+                        this.dx *= this.decay;
+                        this.dy *= this.decay;
+
+                        this.x += this.dx;
+                        this.y += this.dy;
+                        this.radius -= 0.02; // 粒子会逐渐变小，变得更慢
+                        this.opacity -= 0.01; // 粒子逐渐透明
+                        this.life--;
+                    }
+                }
+
+                // 生成烟花的函数
+                function createFireworks(x, y) {
+                    const colors = [
+                        [255, 89, 89],  // 红色
+                        [255, 215, 0],  // 金色
+                        [51 ,136 ,187],  // MyGO 蓝
+                        [255, 105, 180],// 粉色
+                        [255, 69, 0]    // 橙色
+                    ];
+                    for (let i = 0; i < 100; i++) { // 粒子数量
+                        let color = colors[Math.floor(Math.random() * colors.length)];
+                        fireworks.push(new Firework(x, y, color));
+                    }
+                }
+
+                // 动画循环
+                function animate() {
+                    // 使用半透明黑色背景清除
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // 透明度为 0.1 的黑色
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    fireworks = fireworks.filter(firework => firework.life > 0 && firework.opacity > 0); // 粒子过滤
+
+                    fireworks.forEach(firework => {
+                        firework.update();
+                        firework.draw();
+                    });
+
+                    requestAnimationFrame(animate);
+                }
+
+                // 触发烟花从两边发射
+                createFireworks(0, canvas.height / 2); // 左侧烟花
+                createFireworks(canvas.width, canvas.height / 2); // 右侧烟花
+
+                animate();
+            };
+        </script>
     </body>
 </html>

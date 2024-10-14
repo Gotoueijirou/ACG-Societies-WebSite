@@ -57,7 +57,7 @@
 
                 <div class="DivStyle-Glass" id="right3"><!--关注我们    计划delete？-->
                     <p>关于我们</p>
-                    <p>
+                    <p id="Submenu">
                         <a class="button1" href="https://bilibili.com">Bilibili</a>
                         <a class="button" href="https://youtube.com">YouTube</a>
                         <a class="button" href="https://nikoniko.jp">NikoNiko</a>
@@ -69,7 +69,7 @@
 
                 <div class="DivStyle-Glass" id="right4"><!--About This Website-->
                     <p>关于本网站</p>
-                    <p>
+                    <p id="Submenu">
                         <a class="button1" href="https://github.com/Gotoueijirou/ACG-Societies-WebSite">Github项目</a>
                         <a class="button" onclick="copyText()">复制Git地址</a>
                         <a class="button" href="https://space.bilibili.com/1140685131">制作者首页-bilibili</a>
@@ -86,5 +86,17 @@
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
         <!--copy文字js-->
         <script src="js/cptext.js"></script>
+
+
+
+        <script>
+            const div1 = document.getElementById('left');
+        const div2 = document.getElementById('right');
+
+        // 创建 ResizeObserver 来监听 #right 的高度变化
+            div1.style.height = `${div2.offsetHeight}px`;
+
+        </script>
+
     </body>
 </html>
