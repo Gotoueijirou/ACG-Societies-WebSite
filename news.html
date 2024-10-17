@@ -19,6 +19,15 @@
                 flex-direction: row;
                 flex-wrap: wrap;
             }
+            @media (max-aspect-ratio: 1/1){
+                body{
+                    flex-direction: column;
+                }
+                #news{
+                    width: 78%;
+                    margin: 0 auto;
+                }
+            }
         </style>
     </head>
     <body>
@@ -56,5 +65,7 @@
 
         
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
+
+        
     </body>
 </html>
