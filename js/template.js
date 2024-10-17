@@ -1,27 +1,40 @@
-// 使用 fetch 动态加载 aaa.html 并插入多个模板
 fetch('../template.html')
-.then(response => response.text())
-.then(data => {
-    // 创建一个临时 DOM 容器来解析模板内容
+  .then(response => response.text())
+  .then(data => {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = data;
 
-    // 博客页Had
-    const blig_had = tempDiv.querySelector('#blig_had').content;
-    document.querySelectorAll('.blig_had').forEach(el => el.appendChild(blig_had.cloneNode(true)));
+    // 缓存所有模板内容
+    const templates = new Map();
+    tempDiv.querySelectorAll('template').forEach(template => {
+      templates.set(template.id, template.content.cloneNode(true));
+    });
 
-    //副标题
-    const TP_LittleTitle = tempDiv.querySelector('#TP_LittleTitle').content;
-    document.querySelectorAll('.TP_LittleTitle').forEach(el => el.appendChild(TP_LittleTitle.cloneNode(true)));
-
-    
-    //社团介绍
-    const TP_introduce = tempDiv.querySelector('#TP_introduce').content;
-    document.querySelectorAll('.TP_introduce').forEach(el => el.appendChild(TP_introduce.cloneNode(true)));
-
-    const TP_idea = tempDiv.querySelector('#TP_Idea').content;
-    document.querySelectorAll('.TP_Idea').forEach(el => el.appendChild(TP_idea.cloneNode(true)));
+    // 遍历页面中的元素并插入对应的模板
+    templates.forEach((content, id) => {
+      document.querySelectorAll(`.${id}`).forEach(el => 
+        el.appendChild(content.cloneNode(true))  // 克隆缓存的内容
+      );
+    });
+  });
 
 
-
-});
+  //这是一个彩蛋，有时可以当做一个“指令集”
+  (function() {
+    const originalLog = console.log;
+  
+    // 拦截 console.log，检查是否输入特定指令
+    console.log = function(message) {
+      if (typeof message === 'string' && message === 'GotouEijiro!') {
+        // 执行重定向
+        window.location.href = 'gtejr_cd.html';
+      }
+      if (typeof message === 'string' && message === 'blog-template') {
+        // 执行重定向
+        window.location.href = 'blig_template.html';
+      }
+      // 调用原始的 console.log 确保正常日志输出
+      originalLog.apply(console, arguments);
+    };
+  })();
+  
