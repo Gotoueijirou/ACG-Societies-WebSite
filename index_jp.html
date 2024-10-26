@@ -1,0 +1,102 @@
+<!--index.html
+
+-->
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>ACG Societies|Website</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/main.css"><!--统一样式-->
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/index-right.css">
+        <style>
+
+        </style>
+    </head>
+    <!--copy文字内容-->
+    <a style="opacity: 0; max-width: 0; max-height: 0;" id="textToCopy">https://github.com/Gotoueijirou/ACG-Societies-WebSite.git</a>
+    <!--背景图片-->
+    <img class="background-image" src="background/bg1.png" alt="Background Image">
+
+    
+    <body id="index1">
+        <div class="main">
+            <div id="left" class="DivStyle-Glass">
+                <div id="title">
+                    <p id="bigtitle">エーシージー社団へようこそ！</p>
+                    <p id="littletitle" class="TP_LittleTitle"></p><!--副标题-->
+                    
+                    <a class="button1" href="http://123.60.20.232/">社団フォーラム</a>
+                    <a class="button" href="http://123.60.20.232/t/News">社団ニュース</a>
+
+                    <p id="copyright">Gotoueijirou©2024</p>
+                    <p style="font-size: 26px;">夢が初めの場所</p>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="right">
+
+                <div class="DivStyle-Glass" id="right1"><!--About Us-->
+                    <p>社団紹介</p>
+                    <p id="Submenu" class="TP_introduce"><!--社团介绍-->
+                    </p>
+                </div>
+
+
+                <div class="DivStyle-Glass" id="right2"><!--社团理念-->
+                    <p>話したいの</p>
+                    <p id="Submenu" class="TP_Idea"><!--社团理念-->
+                    </p>
+                </div>
+
+
+                <div class="DivStyle-Glass" id="right3"><!--关注我们    计划delete？-->
+                    <p>私たちについて</p>
+                    <p id="Submenu">
+                        <a class="button1" href="https://bilibili.com">Bilibili</a>
+                        <a class="button" href="https://youtube.com">YouTube</a>
+                        <a class="button" href="https://nikoniko.jp">NikoNiko</a>
+                        <a class="button" href="member-menu.html">社員</a>
+                        <a class="button" href="birthday.html">誰の誕生日？</a>
+                    </p>
+                </div>
+
+
+                <div class="DivStyle-Glass" id="right4"><!--About This Website-->
+                    <p>このサイトについて</p>
+                    <p id="Submenu">
+                        <a class="button1" href="https://github.com/Gotoueijirou/ACG-Societies-WebSite">Githubプロジェクト</a>
+                        <a class="button" onclick="copyText()">Git URLをコピー</a>
+                        <a class="button" href="https://www.youtube.com/@GotouEijiro">サイト長のユーチューブ</a>
+                        
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
+        <!--copy文字js-->
+        <script src="js/cptext.js"></script>
+
+
+
+        <script>
+            const div1 = document.getElementById('left');
+        const div2 = document.getElementById('right');
+
+        // 创建 ResizeObserver 来监听 #right 的高度变化
+            div1.style.height = `${div2.offsetHeight}px`;
+
+        </script>
+        <script src="js/painted_eggshell.js"></script>
+
+    </body>
+</html>

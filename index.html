@@ -1,102 +1,23 @@
-<!--index.html
-
--->
 <!DOCTYPE html>
-<html lang="zh">
-    <head>
-        <title>ACG Societies|Website</title>
-        <meta charset="UTF-8">
-        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/main.css"><!--统一样式-->
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/index-right.css">
-        <style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Redirect</title>
+    <script>
+        function redirectToLanguagePage() {
+            var userLang = navigator.language || navigator.userLanguage;
+            window.location.href = userLang.startsWith('zh') ? 'index_zh.html' :
+                                   userLang.startsWith('en') ? 'index_en.html' :
+                                   userLang.startsWith('ja') ? 'index_ja.html' :
+                                   'default_page.html';
+        }
 
-        </style>
-    </head>
-    <!--copy文字内容-->
-    <a style="opacity: 0; max-width: 0; max-height: 0;" id="textToCopy">https://github.com/Gotoueijirou/ACG-Societies-WebSite.git</a>
-    <!--背景图片-->
-    <img class="background-image" src="background/bg1.png" alt="Background Image">
-
-    
-    <body id="index1">
-        <div class="main">
-            <div id="left" class="DivStyle-Glass">
-                <div id="title">
-                    <p id="bigtitle">ACG社团</p>
-                    <p id="littletitle" class="TP_LittleTitle"></p><!--副标题-->
-                    
-                    <a class="button1" href="http://123.60.20.232/">社团博客</a>
-                    <a class="button" href="http://123.60.20.232/t/News">社团新闻</a>
-
-                    <p id="copyright">Gotoueijirou©2024</p>
-                    <p style="font-size: 26px;">梦开始的地方</p>
-                </div>
-            </div>
-
-
-
-
-
-            <div id="right">
-
-                <div class="DivStyle-Glass" id="right1"><!--About Us-->
-                    <p>社团介绍</p>
-                    <p id="Submenu" class="TP_introduce"><!--社团介绍-->
-                    </p>
-                </div>
-
-
-                <div class="DivStyle-Glass" id="right2"><!--社团理念-->
-                    <p>想说的话</p>
-                    <p id="Submenu" class="TP_Idea"><!--社团理念-->
-                    </p>
-                </div>
-
-
-                <div class="DivStyle-Glass" id="right3"><!--关注我们    计划delete？-->
-                    <p>关于我们</p>
-                    <p id="Submenu">
-                        <a class="button1" href="https://bilibili.com">Bilibili</a>
-                        <a class="button" href="https://youtube.com">YouTube</a>
-                        <a class="button" href="https://nikoniko.jp">NikoNiko</a>
-                        <a class="button" href="member-menu.html">社团成员</a>
-                        <a class="button" href="birthday.html">谁的生日</a>
-                    </p>
-                </div>
-
-
-                <div class="DivStyle-Glass" id="right4"><!--About This Website-->
-                    <p>关于本网站</p>
-                    <p id="Submenu">
-                        <a class="button1" href="https://github.com/Gotoueijirou/ACG-Societies-WebSite">Github项目</a>
-                        <a class="button" onclick="copyText()">复制Git地址</a>
-                        <a class="button" href="https://space.bilibili.com/1140685131">制作者首页-bilibili</a>
-                        
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-
-        
-        <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
-        <!--copy文字js-->
-        <script src="js/cptext.js"></script>
-
-
-
-        <script>
-            const div1 = document.getElementById('left');
-        const div2 = document.getElementById('right');
-
-        // 创建 ResizeObserver 来监听 #right 的高度变化
-            div1.style.height = `${div2.offsetHeight}px`;
-
-        </script>
-        <script src="js/painted_eggshell.js"></script>
-
-    </body>
+        window.onload = redirectToLanguagePage;
+    </script>
+</head>
+<body>
+    <h1>Welcome to our website!</h1>
+    <p>You will be redirected based on your browser language...</p>
+</body>
 </html>
