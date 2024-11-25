@@ -1,7 +1,10 @@
 // 假设这是生日数据（可以从数据库获取）
 const birthdays = [
     { name: "凉宫春日", date: "10-8" }, 
-    { name: "阿虚", date: "10-11"},
+    { name: "阿虚", date: "10-11" },
+
+    { name: "天下所有萝莉", date: "10-11"},
+
 
     { name: "李秀成", date: "10-8" },
     { name: "郭家和", date: "8-8" },
@@ -28,7 +31,7 @@ if (birthdayPeople.length > 0) {
     const names = birthdayPeople.map(person => person.name).join('和');
     message.textContent = `祝 ${names} 生日快乐!!`;
 } else {
-    message.textContent = "忌日快乐";
+    message.textContent = "你没快乐";
 }
 
 // 将克隆的内容添加到页面上

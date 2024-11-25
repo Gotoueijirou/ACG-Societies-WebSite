@@ -17,7 +17,8 @@ main.css
 
 
 body{
-    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+    letter-spacing: -.02em;
+    font-variation-settings: "opsz" 40, "wght" 480;
     background-color: #cce7ff;
     justify-content: center;
 
